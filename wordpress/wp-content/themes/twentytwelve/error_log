@@ -1,0 +1,4 @@
+[21-Jul-2015 05:07:44 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentytwelve/404.php on line 10
+[07-Feb-2018 07:31:14 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentytwelve/index.php on line 17
+[07-Feb-2018 07:31:15 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentytwelve/index.php on line 17
+[11-Dec-2019 18:55:33 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentytwelve/functions.php on line 78

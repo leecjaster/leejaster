@@ -1,0 +1,6 @@
+[21-Jul-2015 05:07:44 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentyfourteen/404.php on line 10
+[07-Feb-2018 07:31:13 UTC] PHP Fatal error:  Call to undefined function get_sidebar() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentyfourteen/footer.php on line 17
+[07-Feb-2018 07:31:13 UTC] PHP Fatal error:  Call to undefined function get_sidebar() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentyfourteen/footer.php on line 17
+[11-Dec-2019 19:02:43 UTC] PHP Notice:  Undefined index: wp_version in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentyfourteen/functions.php on line 42
+[11-Dec-2019 19:02:43 UTC] PHP Fatal error:  Call to undefined function get_template_directory() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentyfourteen/functions.php on line 43
+[02-Mar-2021 20:04:54 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/leecjaster1/public_html/wordpress/wp-content/themes/twentyfourteen/404.php on line 10
