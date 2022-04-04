@@ -1,0 +1,4 @@
+[22-Jun-2020 08:49:29 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/leecjaster1/public_html/wordpress/wp-content/plugins/hello.php on line 60
+[22-Jun-2020 08:49:29 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/leecjaster1/public_html/wordpress/wp-content/plugins/hello.php on line 60
+[26-Nov-2020 22:51:33 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/leecjaster1/public_html/wordpress/wp-content/plugins/hello.php on line 60
+[26-Nov-2020 22:51:34 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/leecjaster1/public_html/wordpress/wp-content/plugins/hello.php on line 60
