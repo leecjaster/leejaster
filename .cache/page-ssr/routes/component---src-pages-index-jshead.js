@@ -939,8 +939,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby-plugin-image */ "./node_modules/gatsby-plugin-image/dist/gatsby-image.module.js");
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 
 
 
@@ -951,15 +950,10 @@ const HomePageCard = ({
     cover
   }
 }) => {
-  const image = (0,gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.getImage)(cover);
-  console.log("cover", cover);
-  console.log("image", image);
+  // const image = getImage(cover)
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "max-w-sm rounded overflow-hidden shadow-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(gatsby_plugin_image__WEBPACK_IMPORTED_MODULE_1__.GatsbyImage, {
-    image: cover,
-    alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "px-6 py-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "font-bold text-xl mb-2"
@@ -969,9 +963,9 @@ const HomePageCard = ({
     className: "px-6 pt-4 pb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "inline-block mr-2 text-green-400 text-xl"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaSpotify, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaSpotify, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "inline-block mr-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_2__.FaItunesNote, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaItunesNote, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "inline-block mr-2"
   }, "#winter")));
 };
@@ -1001,8 +995,9 @@ const HomePageSection = ({
 }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
   className: "font-raleway font-bold text-center m-10"
 }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-  class: "flex flex-wrap mx-auto justify-evenly mt-10 gap-10"
-}, data.map(info => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_homePageCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  className: "flex flex-wrap mx-auto justify-evenly mt-10 gap-10"
+}, data.map((info, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_homePageCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  key: index,
   info: info
 }))));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomePageSection);
@@ -1140,7 +1135,7 @@ const Video = ({
   videoTitle,
   ...props
 }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-  class: "aspect-w-16 aspect-h-9"
+  className: "aspect-w-16 aspect-h-9"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
   src: videoSrcURL,
   title: videoTitle,
