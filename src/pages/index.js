@@ -1,6 +1,7 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { Link, graphql } from "gatsby"
+import Video from "../components/video"
+import HomePageSection from "../components/homePageSection"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -69,52 +70,50 @@ const moreLinks = [
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
+const discography = [
+  {
+    title: "Thirty East",
+    spotify: "https://example.com",
+    iTunes: "https://example.com",
+    excerpt: "Example excerpt about thrity east",
+    cover:
+      "../images/discography/thirty-east/cover/front/thirty-east-lee-jaster-w600h600.jpg",
+  },
+  {
+    title: "Thirty East",
+    spotify: "https://example.com",
+    iTunes: "https://example.com",
+    excerpt: "Example excerpt about thrity east",
+    cover: "",
+  },
+  {
+    title: "Thirty East",
+    spotify: "https://example.com",
+    iTunes: "https://example.com",
+    excerpt: "Example excerpt about thrity east",
+    cover: "",
+  },
+]
+
 const IndexPage = () => (
   <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
+    <Video
+      videoSrcURL="https://www.youtube.com/embed/aRCvSgcWEZg"
+      videoTitle="Lee Jaster | Thirty East on YouTube"
+    />
+    <div className="container mx-auto mt-10 mb-10">
+      <h2 className="font-raleway font-bold text-center m-10">Bio</h2>
+      <p className="font-source-sans-pro">
+        Hailing from East Texas, calling Austin, TX home as he explores
+        songrwriting...
       </p>
+      <HomePageSection title="Discography" data={discography} />
+      <HomePageSection title="Demos" data={discography} />
+      <HomePageSection title="Songs" data={discography} />
+      <HomePageSection title="Writings" data={discography} />
+      <HomePageSection title="Photos" data={discography} />
+      <HomePageSection title="Press" data={discography} />
     </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
   </Layout>
 )
 
@@ -126,3 +125,21 @@ const IndexPage = () => (
 export const Head = () => <Seo title="Home" />
 
 export default IndexPage
+
+// export const pageQuery = graphql`
+//   query {
+//     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+//       edges {
+//         node {
+//           id
+//           excerpt(pruneLength: 250)
+//           frontmatter {
+//             date(formatString: "MMMM DD, YYYY")
+//             slug
+//             title
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
