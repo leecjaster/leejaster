@@ -2,14 +2,14 @@
 .DS_Store
 
 # ignore everything in the root except the "wp-content" directory.
-wordpress/!wp-content/
+# wordpress/!wp-content/
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
-wordpress/wp-content/*
-wordpress/!wp-content/mu-plugins/
-wordpress/!wp-content/plugins/
-wordpress/!wp-content/themes/
+# wordpress/wp-content/*
+# wordpress/!wp-content/mu-plugins/
+# wordpress/!wp-content/plugins/
+# wordpress/!wp-content/themes/
 
 # ignore these plugins
 wordpress/wp-content/plugins/hello.php
