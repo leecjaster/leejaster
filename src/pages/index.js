@@ -125,21 +125,3 @@ const IndexPage = () => (
 export const Head = () => <Seo title="Home" />
 
 export default IndexPage
-
-// export const pageQuery = graphql`
-//   query {
-//     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
-//       edges {
-//         node {
-//           id
-//           excerpt(pruneLength: 250)
-//           frontmatter {
-//             date(formatString: "MMMM DD, YYYY")
-//             slug
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
