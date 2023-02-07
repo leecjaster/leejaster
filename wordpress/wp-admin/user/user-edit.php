@@ -7,6 +7,7 @@
  * @since 3.1.0
  */
 
-require_once( dirname( __FILE__ ) . '/admin.php' );
+/** Load WordPress Administration Bootstrap */
+require_once __DIR__ . '/admin.php';
 
-require( ABSPATH . 'wp-admin/user-edit.php' );
+require ABSPATH . 'wp-admin/user-edit.php';
