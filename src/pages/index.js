@@ -2,101 +2,13 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Video from "../components/video"
 import HomePageSection from "../components/homePageSection"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const discography = [
-  {
-    title: "Thirty East",
-    spotify: "https://example.com",
-    iTunes: "https://example.com",
-    excerpt: "Example excerpt about thrity east",
-    cover:
-      "../images/discography/thirty-east/cover/front/thirty-east-lee-jaster-w600h600.jpg",
-  },
-  {
-    title: "Thirty East",
-    spotify: "https://example.com",
-    iTunes: "https://example.com",
-    excerpt: "Example excerpt about thrity east",
-    cover: "",
-  },
-  {
-    title: "Thirty East",
-    spotify: "https://example.com",
-    iTunes: "https://example.com",
-    excerpt: "Example excerpt about thrity east",
-    cover: "",
-  },
-]
-
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
+    {console.log("data", data)}
     <Video
       videoSrcURL="https://www.youtube.com/embed/aRCvSgcWEZg"
       videoTitle="Lee Jaster | Thirty East on YouTube"
@@ -107,15 +19,40 @@ const IndexPage = () => (
         Hailing from East Texas, calling Austin, TX home as he explores
         songrwriting...
       </p>
-      <HomePageSection title="Discography" data={discography} />
-      <HomePageSection title="Demos" data={discography} />
-      <HomePageSection title="Songs" data={discography} />
-      <HomePageSection title="Writings" data={discography} />
-      <HomePageSection title="Photos" data={discography} />
-      <HomePageSection title="Press" data={discography} />
+      <HomePageSection
+        title="Discography"
+        data={data.allMarkdownRemark.edges}
+      />
+      <HomePageSection title="Demos" data={data.allMarkdownRemark.edges} />
+      <HomePageSection title="Songs" data={data.allMarkdownRemark.edges} />
+      <HomePageSection title="Writings" data={data.allMarkdownRemark.edges} />
+      <HomePageSection title="Photos" data={data.allMarkdownRemark.edges} />
+      <HomePageSection title="Press" data={data.allMarkdownRemark.edges} />
     </div>
   </Layout>
 )
+
+export const discography = graphql`
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            path
+            date
+            title
+            cover {
+              absolutePath
+              childImageSharp {
+                gatsbyImageData(width: 300)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 /**
  * Head export to define metadata for the page

@@ -7,12 +7,35 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = async ({ actions }) => {
+const blogPostTemplate = require.resolve(`./src/templates/blog-post.js`)
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
+
+  const result = await graphql(`
+    query {
+      allMdx(sort: { frontmatter: { date: DESC } }) {
+        nodes {
+          path
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild(`There was an error loading posts`, result.errors)
+    return
+  }
+
+  const posts = result.data.allMdx.nodes
+
+  posts.forEach(post => {
+    createPage({
+      path: post.path,
+      component: blogPostTemplate,
+      context: {
+        path: post.path,
+      },
+    })
   })
 }
