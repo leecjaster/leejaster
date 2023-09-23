@@ -62,8 +62,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `albums`,
-        path: `${__dirname}/src/content/albums`,
+        name: `data`,
+        path: `${__dirname}/src/content/content`,
         ignore: [`**/\.*`],
         fastHash: true,
       },
