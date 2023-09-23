@@ -9,11 +9,13 @@ import * as styles from "../components/index.module.css"
 const IndexPage = ({ data }) => (
   <Layout>
     {console.log("data", data)}
-    <Video
-      videoSrcURL="https://www.youtube.com/embed/aRCvSgcWEZg"
-      videoTitle="Lee Jaster | Thirty East on YouTube"
-    />
-    <div className="container mx-auto mt-10 mb-10">
+    <div className="container mx-auto px-6">
+      <Video
+        videoSrcURL="https://www.youtube.com/embed/aRCvSgcWEZg"
+        videoTitle="Lee Jaster | Thirty East on YouTube"
+      />
+    </div>
+    <div className="container mx-auto text-center mt-10 mb-10">
       <h2 className="font-raleway font-bold text-center m-10">Bio</h2>
       <p className="font-source-sans-pro">
         Hailing from East Texas, calling Austin, TX home as he explores
