@@ -7,6 +7,16 @@ import { GrClose } from "react-icons/gr"
 
 function Header({ siteTitle }) {
   const [isExpanded, toggleExpansion] = useState(false)
+  const menu = [
+    { title: "Bio", path: "/", isInternal: true },
+    { title: "Discography", path: "/discography", isInternal: true },
+    { title: "Demos", path: "/demos", isInternal: true },
+    { title: "Songs", path: "/songs", isInternal: true },
+    { title: "Writings", path: "/writings", isInternal: true },
+    { title: "Photos", path: "/photos", isInternal: true },
+    { title: "Videos", path: "/videos", isInternal: true },
+    { title: "Press", path: "/press", isInternal: true },
+  ]
 
   return (
     <nav className="shadow-lg sticky top-0 z-10 bg-white w-full">
@@ -36,60 +46,14 @@ function Header({ siteTitle }) {
             } w-full flex justify-end text-right transition ease-in`}
           >
             <div className="text-sm lg:flex-grow">
-              <Link
-                to={`/`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Home
-              </Link>
-              <Link
-                to={`/bio`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Bio
-              </Link>
-              <Link
-                to={`/discography`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Discography
-              </Link>
-              <Link
-                to={`/demos`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Demos
-              </Link>
-              <Link
-                to={`/songs`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Songs
-              </Link>
-              <Link
-                to={`/writings`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Writings
-              </Link>
-              <Link
-                to={`/photos`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Photos
-              </Link>
-              <Link
-                to={`/videos`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Videos
-              </Link>
-              <Link
-                to={`/Press`}
-                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
-              >
-                Press
-              </Link>
+              {menu.map(({ title, path }) => (
+                <Link
+                  to={path}
+                  className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
+                >
+                  {title}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
