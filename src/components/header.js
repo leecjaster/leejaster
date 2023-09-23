@@ -8,7 +8,8 @@ import { GrClose } from "react-icons/gr"
 function Header({ siteTitle }) {
   const [isExpanded, toggleExpansion] = useState(false)
   const menu = [
-    { title: "Bio", path: "/", isInternal: true },
+    { title: "Home", path: "/", isInternal: true },
+    { title: "Bio", path: "/bio", isInternal: true },
     { title: "Discography", path: "/discography", isInternal: true },
     { title: "Demos", path: "/demos", isInternal: true },
     { title: "Songs", path: "/songs", isInternal: true },
