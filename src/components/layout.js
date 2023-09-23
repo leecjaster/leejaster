@@ -25,15 +25,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <main className="relative" style={{ top: 84 }}>
-        {children}
-      </main>
-      <footer
-        style={{
-          marginTop: `var(--space-5)`,
-          fontSize: `var(--font-sm)`,
-        }}
-      >
+      <main>{children}</main>
+      <footer className="w-full bg-white text-center p-6">
         © {new Date().getFullYear()} &middot; Lee Jaster Music & Lone Wolf
         Publishing
       </footer>

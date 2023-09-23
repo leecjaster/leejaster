@@ -2,12 +2,14 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { FaSlidersH } from "react-icons/fa"
+import { GrClose } from "react-icons/gr"
 
 function Header({ siteTitle }) {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <nav className="shadow-lg fixed z-10 bg-white w-full">
+    <nav className="shadow-lg sticky top-0 z-10 bg-white w-full">
       <div className="container mx-auto">
         <div className="flex flex-wrap items-center justify-between p-6">
           <div className="flex items-center flex-shrink-0 mr-6 text-white">
@@ -23,22 +25,15 @@ function Header({ siteTitle }) {
           <div className="block lg:hidden">
             <button
               onClick={() => toggleExpansion(!isExpanded)}
-              className="flex items-center px-3 py-2 text-black rounded hover:text-grey hover:border-grey"
+              className="flex items-center px-3 py-2 text-black rounded hover:text-grey hover:border-grey transition duration-150 ease-out hover:ease-in"
             >
-              <svg
-                className="w-5 h-5 fill-black"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-              </svg>
+              {!isExpanded ? <FaSlidersH size={24} /> : <GrClose size={24} />}
             </button>
           </div>
           <div
             className={`${
               isExpanded ? `block` : `hidden`
-            } w-full flex justify-end text-right`}
+            } w-full flex justify-end text-right transition ease-in`}
           >
             <div className="text-sm lg:flex-grow">
               <Link
@@ -82,6 +77,12 @@ function Header({ siteTitle }) {
                 className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
               >
                 Photos
+              </Link>
+              <Link
+                to={`/videos`}
+                className="block mt-4 mr-4 text-black lg:inline-block lg:mt-0"
+              >
+                Videos
               </Link>
               <Link
                 to={`/Press`}

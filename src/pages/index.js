@@ -15,21 +15,16 @@ const IndexPage = ({ data }) => (
         videoTitle="Lee Jaster | Thirty East on YouTube"
       />
     </div>
-    <div className="container mx-auto text-center mt-10 mb-10">
-      <h2 className="font-raleway font-bold text-center m-10">Bio</h2>
-      <p className="font-source-sans-pro">
-        Hailing from East Texas, calling Austin, TX home as he explores
-        songrwriting...
-      </p>
+    <div className="container mx-auto mt-10 mb-10">
       <HomePageSection
         title="Discography"
         data={data.allMarkdownRemark.edges}
       />
-      <HomePageSection title="Demos" data={data.allMarkdownRemark.edges} />
-      <HomePageSection title="Songs" data={data.allMarkdownRemark.edges} />
-      <HomePageSection title="Writings" data={data.allMarkdownRemark.edges} />
-      <HomePageSection title="Photos" data={data.allMarkdownRemark.edges} />
-      <HomePageSection title="Press" data={data.allMarkdownRemark.edges} />
+      {/* <HomePageSection title="Demos" data={data.allMarkdownRemark.edges} /> */}
+      {/* <HomePageSection title="Songs" data={data.allMarkdownRemark.edges} /> */}
+      {/* <HomePageSection title="Writings" data={data.allMarkdownRemark.edges} /> */}
+      {/* <HomePageSection title="Photos" data={data.allMarkdownRemark.edges} /> */}
+      {/* <HomePageSection title="Press" data={data.allMarkdownRemark.edges} /> */}
     </div>
   </Layout>
 )
