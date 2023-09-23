@@ -43,8 +43,8 @@ function Header({ siteTitle }) {
           </div>
           <div
             className={`${
-              isExpanded ? `block` : `hidden`
-            } w-full flex justify-end text-right transition ease-in`}
+              isExpanded ? `block` : `lg:block hidden`
+            } block lg:w-auto w-full flex justify-end text-right`}
           >
             <div className="text-sm lg:flex-grow">
               {menu.map(({ title, path }) => (
